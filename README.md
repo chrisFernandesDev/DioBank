@@ -23,7 +23,6 @@ Você está desenvolvendo um programa simples em Java para simular operações b
 # Exemplos
 A tabela abaixo apresenta exemplos com alguns dados de entrada e suas respectivas saídas esperadas. Certifique-se de testar seu programa com esses exemplos e com outros casos possíveis.
 
-| :---:       | :---:              |
 | Entrada     | Saída              |
 | :---:       | :---:              |
 | `1`         | Saldo atual: 50.0  |
