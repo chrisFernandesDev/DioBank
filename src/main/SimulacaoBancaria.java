@@ -19,6 +19,11 @@ public class SimulacaoBancaria {
             System.out.println("4. Encerrar");
 
             System.out.print("Digite o número da opção desejada: ");
+
+            while(!scanner.hasNextInt()) {
+                System.out.println("Opção inválida. Por favor, escolha uma opção válida.");
+                scanner.next();
+            }
             suggestedOption = scanner.nextInt();
 
             switch (suggestedOption) {
@@ -50,7 +55,7 @@ public class SimulacaoBancaria {
 
                         if (scanner.hasNextDouble()) {
                             amountDeposited = scanner.nextDouble();
-                            if (balanceClient == 0) {
+                            if (balanceClient == 0 || balanceClient < amountDeposited) {
                                 System.out.println("Desculpe, o valor solicitado para saque é maior do que seu saldo!");
                                 System.out.println("Se deseja voltar ao menu principal digite 0, se deseja tentar sacar novamente digite qualquer outro número:");
 
@@ -67,15 +72,15 @@ public class SimulacaoBancaria {
                     }
                     break;
                 case 3:
-                    System.out.println("Você escolheu a Opção 3.");
+                    System.out.println("Seu saldo é: " + balanceClient);
                     break;
-                case 4:
-                    System.out.println("Saindo...");
+                case 0:
+                    System.out.println("Saindo... Até breve!");
                     break;
                 default:
                     System.out.println("Opção inválida. Por favor, escolha uma opção válida.");
             }
-        } while (suggestedOption != 4);
+        } while (suggestedOption != 0);
 
         scanner.close();
     }
